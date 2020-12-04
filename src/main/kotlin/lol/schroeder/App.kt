@@ -5,7 +5,8 @@ import java.io.File
 fun main(args: Array<String>) {
     val puzzles = listOf(
         ReportRepair(),
-        PasswordPhilosophy()
+        PasswordPhilosophy(),
+        TobogganTrajectory()
     )
 
     println("AoC 2020 Puzzle Solutions!")

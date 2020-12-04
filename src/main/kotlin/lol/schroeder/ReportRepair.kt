@@ -10,7 +10,6 @@ class ReportRepair : AocPuzzle {
         val nums = input.map(String::toLong)
         val nChoose2 = CombinatoricsUtils.combinationsIterator(nums.size, 2)
         return calculateExpenseEntryProduct(nums, nChoose2)
-
     }
 
     override fun solvePart2(input: List<String>): Number {
