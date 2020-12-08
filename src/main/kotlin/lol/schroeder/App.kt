@@ -9,7 +9,8 @@ fun main(args: Array<String>) {
         TobogganTrajectory(),
         PassportProcessing(),
         BinaryBoarding(),
-        CustomCustoms()
+        CustomCustoms(),
+        HandyHaversacks()
     )
 
     println("AoC 2020 Puzzle Solutions!")
