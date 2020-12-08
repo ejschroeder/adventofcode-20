@@ -6,7 +6,10 @@ fun main(args: Array<String>) {
     val puzzles = listOf(
         ReportRepair(),
         PasswordPhilosophy(),
-        TobogganTrajectory()
+        TobogganTrajectory(),
+        PassportProcessing(),
+        BinaryBoarding(),
+        CustomCustoms()
     )
 
     println("AoC 2020 Puzzle Solutions!")
