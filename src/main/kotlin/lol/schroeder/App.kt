@@ -10,7 +10,8 @@ fun main(args: Array<String>) {
         PassportProcessing(),
         BinaryBoarding(),
         CustomCustoms(),
-        HandyHaversacks()
+        HandyHaversacks(),
+        HandheldHalting()
     )
 
     println("AoC 2020 Puzzle Solutions!")
