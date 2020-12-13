@@ -11,7 +11,9 @@ fun main(args: Array<String>) {
         BinaryBoarding(),
         CustomCustoms(),
         HandyHaversacks(),
-        HandheldHalting()
+        HandheldHalting(),
+        EncodingError(25),
+        AdapterArray()
     )
 
     println("AoC 2020 Puzzle Solutions!")
