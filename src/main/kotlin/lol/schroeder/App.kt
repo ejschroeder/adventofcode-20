@@ -13,7 +13,8 @@ fun main(args: Array<String>) {
         HandyHaversacks(),
         HandheldHalting(),
         EncodingError(25),
-        AdapterArray()
+        AdapterArray(),
+        SeatingSystem()
     )
 
     println("AoC 2020 Puzzle Solutions!")
