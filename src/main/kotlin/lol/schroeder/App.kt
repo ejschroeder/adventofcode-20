@@ -18,7 +18,9 @@ fun main(args: Array<String>) {
         AdapterArray(),
         SeatingSystem(),
         RainRisk(),
-        ShuttleSearch()
+        ShuttleSearch(),
+        DockingData(),
+        RambunctiousRecitation()
     )
 
     println("AoC 2020 Puzzle Solutions!")
