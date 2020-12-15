@@ -45,7 +45,6 @@ class SeatingSystem : AocPuzzle {
         }
     }
 
-
     private fun getNextSeatState(currentState: List<String>, getOccupiedCount: (Point, List<String>) -> Int, getNewSeatState :(Char, Int) -> Char): List<String>? {
         val nextState = currentState.toMutableList()
         for (i in currentState.indices) {

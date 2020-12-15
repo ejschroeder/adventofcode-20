@@ -1,6 +1,8 @@
 package lol.schroeder
 
 import java.io.File
+import kotlin.system.measureNanoTime
+import kotlin.system.measureTimeMillis
 
 fun main(args: Array<String>) {
     val puzzles = listOf(
@@ -14,18 +16,31 @@ fun main(args: Array<String>) {
         HandheldHalting(),
         EncodingError(25),
         AdapterArray(),
-        SeatingSystem()
+        SeatingSystem(),
+        RainRisk(),
+        ShuttleSearch()
     )
 
     println("AoC 2020 Puzzle Solutions!")
     puzzles.forEachIndexed { idx, puzzle ->
         val inputLines = getFileLines(puzzle.filename)
-        println("Day $idx")
-        println("Part 1: ${puzzle.solvePart1(inputLines)}")
-        println("Part 2: ${puzzle.solvePart2(inputLines)}")
+        println("Day ${idx + 1} - ${puzzle.javaClass.simpleName}")
+        var result: Number
+
+        var nanoSeconds = measureNanoTime {
+            result = puzzle.solvePart1(inputLines)
+        }
+        println("Part 1: $result - ${toMillis(nanoSeconds)} ms")
+
+        nanoSeconds = measureNanoTime {
+            result = puzzle.solvePart2(inputLines)
+        }
+        println("Part 2: $result - ${toMillis(nanoSeconds)} ms")
         println()
     }
 }
+
+private fun toMillis(nanoSeconds: Long) = nanoSeconds / 1_000_000.0
 
 private fun getFileLines(filename: String): List<String> {
     val uri = object {}.javaClass.getResource(filename).toURI()
