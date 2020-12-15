@@ -19,18 +19,15 @@ class ShuttleSearch : AocPuzzle {
             .mapIndexed { idx, id -> Bus(id.toLongOrNull() ?: -1L, idx) }
             .filter { it.id != -1L }
 
-        var step = 1L
-        var t = 0L
-        var idx = 0
-        while (idx < ids.size) {
-            t += step
-            if ((t + ids[idx].index).rem(ids[idx].id) == 0L) {
-                step *= ids[idx].id
-                idx++
-            }
-        }
-        return t
+        val startingState = BusScheduleState(0, 1)
+
+        return ids.fold(startingState) { state, bus ->
+            val earliestTime = generateSequence(state.timestamp + state.stepSize) { it + state.stepSize }
+                .first { (it + bus.index).rem(bus.id) == 0L }
+            BusScheduleState(earliestTime, state.stepSize * bus.id)
+        }.timestamp
     }
 }
 
 data class Bus(val id: Long, val index: Int)
+data class BusScheduleState(val timestamp: Long, val stepSize: Long)
