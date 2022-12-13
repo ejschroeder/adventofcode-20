@@ -20,14 +20,15 @@ fun main(args: Array<String>) {
         RainRisk(),
         ShuttleSearch(),
         DockingData(),
-        RambunctiousRecitation()
+        RambunctiousRecitation(),
+        AllergenAssessment(),
     )
 
     println("AoC 2020 Puzzle Solutions!")
     puzzles.forEachIndexed { idx, puzzle ->
         val inputLines = getFileLines(puzzle.filename)
         println("Day ${idx + 1} - ${puzzle.javaClass.simpleName}")
-        var result: Number
+        var result: Any
 
         var nanoSeconds = measureNanoTime {
             result = puzzle.solvePart1(inputLines)
